@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+footer, header {
+  padding: 1rem 0;
+  text-align: center;
+  font: normal normal 900 1.25rem/1.25rem serif;
+  background: skyblue;
+  color: hsl(17, 71%, 27%);
+}
+main {
+  margin: 1rem 0;
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+}
+.card {
+  margin: auto;
+  position: relative;
+  width: calc(100% - 1rem);
+  background: hsl(0, 0%, 95%);
+  border-radius: 1rem;
+  overflow: hidden;
+  user-select: none;
+}
+@keyframes fade {
+  50% {
+    background: hsl(0, 0%, 75%);
+  }
+}
+.card.default {
+  height: 20rem;
+  animation: fade 2s ease infinite;
+}
+.card > img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  background: hsl(0, 0%, 95%);
+}
+.card.show .container {
+  opacity: 1;
+  pointer-events: auto;
+}
+.container {
+  padding: 1rem;
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content min-content auto;
+  gap: 1rem;
+  position: absolute;
+  top: 0;
+  background: hsl(0, 0%, 100%, 0.5);
+  backdrop-filter: blur(1rem);
+  border-radius: 1rem;
+  opacity: 0;
+  overflow: auto;
+  pointer-events: none;
+  transition: 1s;
+}
+.bar {
+  padding: 0.25rem;
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  background: white;
+  border-radius: 0.25rem;
+}
+.bar > * {
+  color: black;
+  align-self: center;
+}
+.bar span {
+ font-size: 1.125rem; 
+}
+.bar span img {
+  margin: 0 0.5rem 0 0;
+  width: 1.125rem;
+}
+.bar a {
+  font-size: 0.75rem;
+}
+.title {
+  padding: 0.25rem 1rem;
+  background: black;
+  color: white;
+  font: normal normal 900 1.5rem/2rem sans-serif;
+}
