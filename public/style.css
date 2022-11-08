@@ -14,16 +14,22 @@ main {
   margin: 1rem 0;
   min-height: 100vh;
   display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, 304px);
+  grid-template-rows: repeat(auto-fill, 304px);
   gap: 1rem;
+  justify-content: center;
+  align-content: center;
 }
 .card {
   margin: auto;
   position: relative;
-  width: calc(100% - 1rem);
-  background: hsl(0, 0%, 95%);
+  max-width: 344px !important;
+  background: hsl(0, 0%, 50%);
   border-radius: 1rem;
   overflow: hidden;
   user-select: none;
+  cursor: pointer;
 }
 @keyframes fade {
   50% {
@@ -35,9 +41,10 @@ main {
   animation: fade 2s ease infinite;
 }
 .card > img {
-  max-width: 100%;
+  margin: auto 0;
+  display: block;
   border-radius: 0.5rem;
-  background: hsl(0, 0%, 95%);
+  background: hsl(0, 0%, 80%);
 }
 .card.show .container {
   opacity: 1;

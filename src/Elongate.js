@@ -7,7 +7,7 @@ var [error, setError] = useState(null);
 var [isLoaded, setIsLoaded] = useState(false);
 var [items, setItems] = useState([]);
   useEffect(() => {
-  var url = `https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts|coordinates|pageimages|pageprops&exlimit=${randomPlaces.length}&exsentences=2&exintro&explaintext&redirects=1&titles=${randomPlaces.join("|")}`;
+  var url = `https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts${``/*|coordinates*/}|pageimages|pageprops&exlimit=${randomPlaces.length}&exsentences=2&exintro&explaintext&redirects=1&titles=${randomPlaces.join("|")}`;
     fetch(url)
     .then(response => response.json())
     .then((result) => {

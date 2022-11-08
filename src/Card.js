@@ -3,18 +3,20 @@ function toggle(e) {
 e.currentTarget.classList.toggle("show");
 }
 function Card(props) {
-var { title, extract, coordinates, thumbnail, pageprops } = props;
-var source = thumbnail.source.replace(thumbnail.width+"px", "360px");
-  try {
-  var { lat, lon } = coordinates[0];
-  } catch(e) {}
+var { title, extract, thumbnail, pageprops } = props;
+var source = thumbnail.source.replace(thumbnail.width+"px", "304px");
+  var { width, height } = thumbnail;
+  var newHeight = 304 * height / width;
+  var calcHeight = Math.ceil(newHeight / 304);
+  var gridRow = `span ${calcHeight}`;
+  var gridColumn = `span 1`;
   return (                     
-    <div className="card" style={{height: thumbnail.height/thumbnail.width*344+"px"}} onDoubleClick={toggle}>
+    <div className="card" style={{gridRow, gridColumn}} onDoubleClick={toggle}>
       <img src={source} alt={title}/>
       <div className="container">
         <div>
           <div className="bar">
-            <Country lat={lat} lon={lon} title={title} wikibaseItem={pageprops["wikibase_item"]}/>
+            <Country wikibaseItem={pageprops["wikibase_item"]}/>
             <a className="map-url" target="_blank" rel="noreferrer" href={`https://maps.google.com?q=${title}`}>View in Google Maps</a>
           </div>
         </div>
