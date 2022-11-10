@@ -6,12 +6,11 @@ function Card(props) {
 var { title, extract, thumbnail, pageprops } = props;
 var source = thumbnail.source.replace(thumbnail.width+"px", "304px");
   var { width, height } = thumbnail;
-  var newHeight = 304 * height / width;
-  var calcHeight = Math.ceil(newHeight / 304);
-  var gridRow = `span ${calcHeight}`;
-  var gridColumn = `span 1`;
+  height = 304 * height / width;
+  width = "304px";
+  height += "px";
   return (                     
-    <div className="card" style={{gridRow, gridColumn}} onDoubleClick={toggle}>
+    <div className="card" style={{width, height}} onDoubleClick={toggle}>
       <img src={source} alt={title}/>
       <div className="container">
         <div>

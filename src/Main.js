@@ -1,4 +1,3 @@
-import Card from "./Card";
 import Data from "./Data";
 function Main() {
   return (

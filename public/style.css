@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,25 +13,38 @@ footer, header {
   color: hsl(17, 71%, 27%);
 }
 main {
-  margin: 1rem 0;
+  margin: 1rem;
   min-height: 100vh;
-  display: grid;
-  grid-auto-flow: dense;
-  grid-template-columns: repeat(auto-fill, 304px);
-  grid-template-rows: repeat(auto-fill, 304px);
-  gap: 1rem;
-  justify-content: center;
-  align-content: center;
+  columns: 304px
 }
+/*@media only screen and (min-width: 1024px) {
+  main {
+    column-count: 4;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  main {
+    column-count: 3;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  main {
+    column-count: 2;
+  }
+}*/
 .card {
-  margin: auto;
-  position: relative;
+  margin: 0.5rem;
+  display: block;
   max-width: 344px !important;
+  position: relative;
   background: hsl(0, 0%, 50%);
   border-radius: 1rem;
   overflow: hidden;
   user-select: none;
   cursor: pointer;
+}
+.card:first-child {
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 @keyframes fade {
   50% {
