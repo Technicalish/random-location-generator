@@ -1,9 +1,11 @@
 import Data from "./Data";
 function Main() {
   return (
-    <main>
-      <Data/>
-    </main>
+    <div id="main-container">
+      <main>
+        <Data/>
+      </main>
+    </div>
   )
 }
 export default Main;
