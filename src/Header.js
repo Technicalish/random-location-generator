@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header><i>my travel blog</i></header>
+    <header><i>random locations around you (from wikipidea)</i></header>
   )
 }
 export default Header;
